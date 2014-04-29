@@ -34,35 +34,6 @@ public class SimpleConvertImage {
 	}
 	public static native byte[] process(byte[] byte_array);
 	
-	/*public static void main(String[] args){
-		String dirName = "images/";
-		long start, end, diff1,diff2;
-		start = System.nanoTime();
-		//This is where it is retrieving the files from. Change to file names
-		String[] pics = {"1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"};
-		//This block converts all the pictures to grayscake with native C code.
-		for(int i = 0; i< pics.length; ++i){
-			try{
-				nativeGray(pics[i]);
-				
-			}catch(IOException ex){}
-				
-		}
-		end = System.nanoTime();
-		diff1 = end-start;
-		//reset the start time for the second block to convert to grayscale
-		start = System.nanoTime();
-		for(int i = 0; i< pics.length; ++i){
-			try{
-				gray(pics[i]);
-
-			}catch(IOException ex){System.out.println("IOException");}
-				
-		}
-		end = System.nanoTime();
-		diff2 = end-start;
-		System.out.println("Native took " + diff1/1000000 + " milli seconds, while Java took " + diff2/1000000 + " milliseconds");
-	}*/
 	public static boolean nativeGray(String name) throws IOException{
 		BufferedImage img=ImageIO.read(new File(dirName + name));
 		ByteArrayOutputStream baos=new ByteArrayOutputStream();
