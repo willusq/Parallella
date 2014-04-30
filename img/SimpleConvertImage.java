@@ -34,7 +34,7 @@ public class SimpleConvertImage {
 	}
 	public static native byte[] process(byte[] byte_array);
 	
-	public static boolean nativeGray(String name) throws IOException{
+	public static void nativeGray(String name) throws IOException{
 		BufferedImage img=ImageIO.read(new File(dirName + name));
 		ByteArrayOutputStream baos=new ByteArrayOutputStream();
 		ImageIO.write(img, "bmp", baos );
@@ -44,7 +44,6 @@ public class SimpleConvertImage {
 		BufferedImage image=ImageIO.read(new ByteArrayInputStream(bytes2));
 		
 		ImageIO.write(image, "jpg", new File("NativeAfter" + name));
-		if(bytes2[1]!=bytes1[1]){return true;}else{return true;}
 	}
 	public static void gray(String name) throws IOException{	
 		BufferedImage img=ImageIO.read(new File(dirName + name));
