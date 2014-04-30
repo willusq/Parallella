@@ -21,32 +21,21 @@
 import java.lang.Thread;
 import java.io.IOException;
 
-public class convertThread extends Thread{
-	private String picName;	
-	private Thread t;
-   private String threadName;
-	public boolean done;
+public class convertRun implements  Runnable{
+	private String picName;
+	private String threadName;
    
-	convertThread(){
-	threadName = "null";
-		picName = null;	
-	}
 
-   convertThread(String pic, String name){
+   convertRun(String pic, String name){
 		threadName = name;
 		picName = pic;				
    }
-   public void run() {
-			done = false;
+   public void run(){
       try {
          SimpleConvertImage.nativeGray(picName);
      	} catch(IOException e){
-			}
+		System.out.print("I can't find that file");	}
 	}
-	
-		public void setPic(String pic){
-			picName = pic;
-		}
    
    
 
