@@ -43,7 +43,7 @@ public class SimpleConvertImage {
 		byte[] bytes2 = process(bytes1);
 		BufferedImage image=ImageIO.read(new ByteArrayInputStream(bytes2));
 		
-		ImageIO.write(image, "jpg", new File("NativeAfter" + name));
+		ImageIO.write(image, "jpg", new File("Native/After" + name));
 	}
 	public static void gray(String name) throws IOException{	
 		BufferedImage img=ImageIO.read(new File(dirName + name));
@@ -58,8 +58,8 @@ public class SimpleConvertImage {
     }
 		
 		BufferedImage image=ImageIO.read(new ByteArrayInputStream(bytes2));
-		
-		ImageIO.write(image, "jpg", new File("NNAfter" + name));
+		System.out.println("Hello");
+		ImageIO.write(image, "jpg", new File("Non/After" + name));
 	}
 
 	}

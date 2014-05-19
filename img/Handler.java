@@ -32,7 +32,7 @@ public class Handler {
 		boolean done = false;
 		int iter = 0;
 		//This is where it is retrieving the files from. Change to file names
-		String[] pics = {"1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg",};
+		String[] pics = {"1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"};
 		int max = MAX_THREAD;
 		Thread[] threads = new Thread[MAX_THREAD];
 		if(pics.length < MAX_THREAD) max = pics.length;
@@ -103,7 +103,7 @@ public class Handler {
 
 		end = System.nanoTime();
 		diff2 = end-start;
-		System.out.println("Java with threads took " + diff1/1000000 + " milliseconds, while Java without threads took " + diff2/1000000 + " milliseconds");
+		//System.out.println("Java with threads took " + diff1/1000000 + " milliseconds, while Java without threads took " + diff2/1000000 + " milliseconds");
 	}
 
 
